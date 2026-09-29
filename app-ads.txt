@@ -1,0 +1,9 @@
+# app-ads.txt for Botano Shift Alarm (com.botano.alarm)
+#
+# Spec: https://iabtechlab.com/ads-txt/
+# This file MUST be served from the ROOT of the developer website domain that
+# is declared on the Google Play store listing. A copy in a subdirectory
+# (e.g. /botanoalarm/app-ads.txt) is never crawled.
+#
+# Publisher ID comes from the AdMob app ID ca-app-pub-7163284198622982~...
+google.com, pub-7163284198622982, DIRECT, f08c47fec0942fa0
