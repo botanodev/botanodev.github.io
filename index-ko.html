@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Botano</title>
+<meta name="description" content="Botano 앱과 스토어 링크.">
+<link rel="alternate" hreflang="en" href="https://botanodev.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://botanodev.github.io/index-zh.html">
+<link rel="alternate" hreflang="ja" href="https://botanodev.github.io/index-ja.html">
+<link rel="alternate" hreflang="ko" href="https://botanodev.github.io/index-ko.html">
+<link rel="alternate" hreflang="x-default" href="https://botanodev.github.io/">
+<style>
+  :root {
+    --bg: #F5F7F4; --ink: #1A1D18; --muted: #4A5147; --hair: #DCE0D8;
+    --brand: #5273A8; --green: #4C7A3F; --card: #FFFFFF;
+    --chip: #EDF1F7; --chipink: #3C5A86;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101410; --ink: #E2E5DC; --muted: #B3BCAC; --hair: #2B322A;
+      --green: #9DD48B; --card: #171B16;
+      --chip: #1C2432; --chipink: #A8C2E6;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: system-ui, "Noto Sans TC", "Noto Sans JP", "Noto Sans KR", sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  header { background: var(--brand); color: #fff; padding: 48px 20px 40px; }
+  header .inner, .wrap { max-width: 40rem; margin: 0 auto; }
+  header h1 { margin: 0 0 6px; font-size: 1.9rem; letter-spacing: -.01em; }
+  header p { margin: 0; color: #DCE4F2; }
+  header nav { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 6px; }
+  header nav a, header nav strong {
+    font-size: .88rem; padding: 4px 11px; border-radius: 999px;
+    text-decoration: none; border: 1px solid rgba(255,255,255,.35);
+  }
+  header nav a { color: #DCE4F2; }
+  header nav strong { background: #fff; color: var(--brand); border-color: #fff; }
+
+  .wrap { padding: 36px 20px 72px; }
+  h2 { font-size: .95rem; letter-spacing: .08em; color: var(--muted);
+       margin: 0 0 14px; font-weight: 700; }
+
+  .app {
+    background: var(--card); border: 1px solid var(--hair);
+    padding: 18px; margin-bottom: 14px;
+  }
+  .app b { display: block; font-size: 1.1rem; }
+  .app .en { color: var(--muted); font-weight: 400; font-size: .95rem; }
+  .app > p { margin: 4px 0 14px; color: var(--muted); font-size: .95rem; }
+
+  .stores { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .stores a, .stores span {
+    display: inline-block; padding: 7px 14px; font-size: .9rem;
+    border: 1px solid var(--hair); border-radius: 999px;
+  }
+  .stores a {
+    background: var(--chip); color: var(--chipink);
+    text-decoration: none; font-weight: 700; border-color: transparent;
+  }
+  .stores span { color: var(--muted); }
+  .stores .more {
+    background: none; color: var(--green); font-weight: 400;
+    border-color: var(--hair); padding: 7px 12px;
+  }
+
+  footer {
+    margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--hair);
+    color: var(--muted); font-size: .92rem;
+  }
+  footer a { color: var(--green); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <h1>Botano</h1>
+    <p>혼자 만드는 작은 도구들.</p>
+    <nav>
+      <a href="/">English</a>
+      <a href="/index-zh.html">中文</a>
+      <a href="/index-ja.html">日本語</a>
+      <strong>한국어</strong>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <h2>앱</h2>
+
+  <div class="app">
+    <b>교대근무 알람 <span class="en">Botano Shift Work Alarm</span></b>
+    <p>교대 근무자를 위한 캘린더 연동 알람. 근무표만 표시해 두면 알람이 알아서 따라갑니다.</p>
+    <div class="stores">
+      <a href="https://play.google.com/store/apps/details?id=com.botano.alarm">Google Play</a>
+      <span>App Store &middot; 출시 예정</span>
+      <a class="more" href="/botanoalarm/">자세히</a>
+    </div>
+  </div>
+
+  <div class="app">
+    <b>식물 성장 기록 <span class="en">Plant Growth Journal</span></b>
+    <p>식물 사진을 기록해 공유할 수 있는 세로로 긴 이미지로 내보냅니다.</p>
+    <div class="stores">
+      <a href="https://play.google.com/store/apps/details?id=com.botano.plantrecord">Google Play</a>
+      <span>App Store &middot; 출시 예정</span>
+      <a class="more" href="/plantrecord/">자세히</a>
+    </div>
+  </div>
+
+  <div class="app">
+    <b>해외 쇼핑 계산기 <span class="en">TripCart</span></b>
+    <p>매장에서 자국 통화로 얼마인지 바로 계산하고, 결제 후에는 여행 가계부에 그대로 남습니다.</p>
+    <div class="stores">
+      <a href="https://play.google.com/store/apps/details?id=com.botano.tripcart">Google Play</a>
+      <span>App Store &middot; 출시 예정</span>
+      <a class="more" href="/tripcart/">자세히</a>
+    </div>
+  </div>
+
+  <div class="app">
+    <b>운동 습관 만들기 <span class="en">Exercise Habit</span></b>
+    <p>운동을 싫어하고 자주 잊는 사람을 위해. 하루 최소량은 1분도 걸리지 않습니다.</p>
+    <div class="stores">
+      <span>Google Play &middot; 출시 예정</span>
+      <span>App Store &middot; 출시 예정</span>
+      <a class="more" href="/exercisehabit/">자세히</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>문의나 제안은 각 앱의 "설정 → 의견 및 지원"에서, 또는 <a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a> 으로 보내 주세요.</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,101 +1,140 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Botano</title>
-<meta name="description" content="Botano 的 App。">
+<meta name="description" content="Botano apps and store links.">
+<link rel="alternate" hreflang="en" href="https://botanodev.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://botanodev.github.io/index-zh.html">
+<link rel="alternate" hreflang="ja" href="https://botanodev.github.io/index-ja.html">
+<link rel="alternate" hreflang="ko" href="https://botanodev.github.io/index-ko.html">
+<link rel="alternate" hreflang="x-default" href="https://botanodev.github.io/">
 <style>
   :root {
     --bg: #F5F7F4; --ink: #1A1D18; --muted: #4A5147; --hair: #DCE0D8;
     --brand: #5273A8; --green: #4C7A3F; --card: #FFFFFF;
-    --dawn: #CF6A4C; --noon: #D9A33A; --dusk: #5A6BA8;
+    --chip: #EDF1F7; --chipink: #3C5A86;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #101410; --ink: #E2E5DC; --muted: #B3BCAC; --hair: #2B322A;
       --green: #9DD48B; --card: #171B16;
-      --dawn: #EE8F63; --noon: #F5CE63; --dusk: #8B9AE0;
+      --chip: #1C2432; --chipink: #A8C2E6;
     }
   }
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--bg); color: var(--ink);
-    font-family: system-ui, "Noto Sans TC", sans-serif;
-    line-height: 1.75; -webkit-font-smoothing: antialiased;
+    font-family: system-ui, "Noto Sans TC", "Noto Sans JP", "Noto Sans KR", sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
   }
-  header { background: var(--brand); color: #fff; padding: 56px 20px 48px; }
-  header .inner { max-width: 38rem; margin: 0 auto; }
+  header { background: var(--brand); color: #fff; padding: 48px 20px 40px; }
+  header .inner, .wrap { max-width: 40rem; margin: 0 auto; }
   header h1 { margin: 0 0 6px; font-size: 1.9rem; letter-spacing: -.01em; }
   header p { margin: 0; color: #DCE4F2; }
+  header nav { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 6px; }
+  header nav a, header nav strong {
+    font-size: .88rem; padding: 4px 11px; border-radius: 999px;
+    text-decoration: none; border: 1px solid rgba(255,255,255,.35);
+  }
+  header nav a { color: #DCE4F2; }
+  header nav strong { background: #fff; color: var(--brand); border-color: #fff; }
 
-  .wrap { max-width: 38rem; margin: 0 auto; padding: 36px 20px 72px; }
-  h2 { font-size: 1rem; letter-spacing: .08em; color: var(--muted);
+  .wrap { padding: 36px 20px 72px; }
+  h2 { font-size: .95rem; letter-spacing: .08em; color: var(--muted);
        margin: 0 0 14px; font-weight: 700; }
 
-  a.app {
-    display: flex; gap: 14px; align-items: flex-start; text-decoration: none;
-    color: inherit; background: var(--card); border: 1px solid var(--hair);
-    padding: 18px; margin-bottom: 12px;
+  .app {
+    background: var(--card); border: 1px solid var(--hair);
+    padding: 18px; margin-bottom: 14px;
   }
-  a.app .icons { display: flex; gap: 3px; flex: none; padding-top: 3px; }
-  a.app .icons svg { width: 20px; height: 20px; }
-  a.app b { display: block; font-size: 1.05rem; }
-  a.app span { color: var(--muted); font-size: .95rem; }
+  .app b { display: block; font-size: 1.1rem; }
+  .app .en { color: var(--muted); font-weight: 400; font-size: .95rem; }
+  .app > p { margin: 4px 0 14px; color: var(--muted); font-size: .95rem; }
 
-  footer { margin-top: 40px; color: var(--muted); font-size: .92rem; }
+  .stores { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .stores a, .stores span {
+    display: inline-block; padding: 7px 14px; font-size: .9rem;
+    border: 1px solid var(--hair); border-radius: 999px;
+  }
+  .stores a {
+    background: var(--chip); color: var(--chipink);
+    text-decoration: none; font-weight: 700; border-color: transparent;
+  }
+  .stores span { color: var(--muted); }
+  .stores .more {
+    background: none; color: var(--green); font-weight: 400;
+    border-color: var(--hair); padding: 7px 12px;
+  }
+
+  footer {
+    margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--hair);
+    color: var(--muted); font-size: .92rem;
+  }
   footer a { color: var(--green); }
 </style>
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-  <mask id="m"><circle cx="63" cy="50" r="41.6" fill="#fff"/><circle cx="84.45" cy="50" r="39" fill="#000"/></mask>
-  <g id="i-dawn">
-    <path d="M28 70A22 22 0 0 1 72 70Z" fill="currentColor"/>
-    <g stroke="currentColor" stroke-width="7.5" stroke-linecap="round">
-      <line x1="50" y1="38" x2="50" y2="27"/><line x1="71.4" y1="46.2" x2="78.8" y2="38.1"/>
-      <line x1="28.6" y1="46.2" x2="21.2" y2="38.1"/><line x1="80.8" y1="61.2" x2="91.3" y2="58.2"/>
-      <line x1="19.2" y1="61.2" x2="8.7" y2="58.2"/>
-    </g>
-    <line x1="8" y1="70" x2="92" y2="70" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
-  </g>
-  <g id="i-noon">
-    <circle cx="50" cy="50" r="20" fill="currentColor"/>
-    <g stroke="currentColor" stroke-width="7.5" stroke-linecap="round">
-      <line x1="80" y1="50" x2="94" y2="50"/><line x1="71.2" y1="71.2" x2="81.1" y2="81.1"/>
-      <line x1="50" y1="80" x2="50" y2="94"/><line x1="28.8" y1="71.2" x2="18.9" y2="81.1"/>
-      <line x1="20" y1="50" x2="6" y2="50"/><line x1="28.8" y1="28.8" x2="18.9" y2="18.9"/>
-      <line x1="50" y1="20" x2="50" y2="6"/><line x1="71.2" y1="28.8" x2="81.1" y2="18.9"/>
-    </g>
-  </g>
-  <g id="i-dusk"><g transform="rotate(-45 50 50)"><circle cx="63" cy="50" r="41.6" fill="currentColor" mask="url(#m)"/></g></g>
-</defs></svg>
-
 <header>
   <div class="inner">
     <h1>Botano</h1>
-    <p>一個人做的小工具。</p>
+    <p>Small tools, made by one person.</p>
+    <nav>
+      <strong>English</strong>
+      <a href="/index-zh.html">中文</a>
+      <a href="/index-ja.html">日本語</a>
+      <a href="/index-ko.html">한국어</a>
+    </nav>
   </div>
 </header>
 
 <div class="wrap">
-  <h2>App</h2>
+  <h2>APPS</h2>
 
-  <a class="app" href="/botanoalarm/">
-    <span class="icons">
-      <svg viewBox="0 0 100 100" style="color:var(--dawn)"><use href="#i-dawn"/></svg>
-      <svg viewBox="0 0 100 100" style="color:var(--noon)"><use href="#i-noon"/></svg>
-      <svg viewBox="0 0 100 100" style="color:var(--dusk)"><use href="#i-dusk"/></svg>
-    </span>
-    <span>
-      <b>班表鬧鐘</b>
-      <span>排班族的行事曆鬧鐘。在行事曆上標好班別，鬧鐘自己跟著班表響。</span>
-    </span>
-  </a>
+  <div class="app">
+    <b>Botano Shift Work Alarm</b>
+    <p>A calendar-driven alarm for shift workers. Mark your shifts once; the alarms follow.</p>
+    <div class="stores">
+      <a href="https://play.google.com/store/apps/details?id=com.botano.alarm">Google Play</a>
+      <span>App Store &middot; Coming soon</span>
+      <a class="more" href="/botanoalarm/">Details</a>
+    </div>
+  </div>
+
+  <div class="app">
+    <b>Plant Growth Journal</b>
+    <p>Photograph your plants over time and export one tall, shareable image.</p>
+    <div class="stores">
+      <a href="https://play.google.com/store/apps/details?id=com.botano.plantrecord">Google Play</a>
+      <span>App Store &middot; Coming soon</span>
+      <a class="more" href="/plantrecord/">Details</a>
+    </div>
+  </div>
+
+  <div class="app">
+    <b>TripCart</b>
+    <p>Work out what a shop really costs in your own currency, then keep it as a trip expense.</p>
+    <div class="stores">
+      <a href="https://play.google.com/store/apps/details?id=com.botano.tripcart">Google Play</a>
+      <span>App Store &middot; Coming soon</span>
+      <a class="more" href="/tripcart/">Details</a>
+    </div>
+  </div>
+
+  <div class="app">
+    <b>Exercise Habit</b>
+    <p>For people who dislike exercise and forget to start. The daily minimum takes under a minute.</p>
+    <div class="stores">
+      <span>Google Play &middot; Coming soon</span>
+      <span>App Store &middot; Coming soon</span>
+      <a class="more" href="/exercisehabit/">Details</a>
+    </div>
+  </div>
 
   <footer>
-    <p>Android。有問題或建議，可以在 App 裡的「設定 → 意見與支援」寄給我。</p>
+    <p>Questions or suggestions are welcome through "Settings &rarr; Feedback" in any of the apps, or by email to <a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a>.</p>
   </footer>
 </div>
 </body>
