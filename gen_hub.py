@@ -69,7 +69,8 @@ UI = {
 }
 
 # play：None 表示還沒公開（顯示「即將推出」而不是連結）。
-# ios ：目前全部都還沒有 App Store ID，拿到之後把 None 換成網址。
+# ios ：None 表示還沒上架，拿到 App Store ID 之後換成網址。
+#       Play 只在封閉測試時也放 None——測試頁一般人打不開。
 APPS = [
     {
         "play": "com.botano.alarm",
@@ -126,6 +127,26 @@ APPS = [
                   "旅の家計簿に残ります。",
             "ko": "매장에서 자국 통화로 얼마인지 바로 계산하고, 결제 후에는 "
                   "여행 가계부에 그대로 남습니다.",
+        },
+    },
+    {
+        "play": None,
+        "ios": "https://apps.apple.com/app/id6835796281",
+        "more": "/plushcam/",
+        "name": {
+            "zh": ("玩偶拍照", "PlushCam"),
+            "en": ("PlushCam", ""),
+            "ja": ("ぬい撮りカメラ", "PlushCam"),
+            "ko": ("인형 사진", "PlushCam"),
+        },
+        "line": {
+            "zh": "把玩偶拍一次、去背存起來，之後就能放進任何照片裡。玩偶不用帶出門，也能一起合照。",
+            "en": "Photograph your plushie once, and it can join any photo you take, "
+                  "even on days it stays home.",
+            "ja": "ぬいを一度撮って切り抜いておけば、どんな写真にも一緒に写れます。"
+                  "連れて行けない日も、ぬい撮り。",
+            "ko": "인형을 한 번 찍어 배경을 지워 두면 어떤 사진에도 함께 담을 수 있습니다. "
+                  "데려가지 못한 날에도 함께 찍어요.",
         },
     },
     {
