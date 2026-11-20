@@ -32,7 +32,7 @@ UI = {
         "tagline": "一個人做的小工具。",
         "apps": "APP",
         "soon": "即將推出",
-        "more": "說明",
+        "privacy": "隱私權政策",
         "foot": ('有問題或建議，可以在各個 App 裡的「設定 → 意見與支援」寄給我，'
                  '或寄到 <a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a>。'),
     },
@@ -41,7 +41,7 @@ UI = {
         "tagline": "Small tools, made by one person.",
         "apps": "APPS",
         "soon": "Coming soon",
-        "more": "Details",
+        "privacy": "Privacy policy",
         "foot": ('Questions or suggestions are welcome through "Settings &rarr; Feedback" '
                  'in any of the apps, or by email to '
                  '<a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a>.'),
@@ -51,7 +51,7 @@ UI = {
         "tagline": "ひとりで作っている小さなツール。",
         "apps": "アプリ",
         "soon": "近日公開",
-        "more": "詳細",
+        "privacy": "プライバシーポリシー",
         "foot": ('ご質問・ご要望は各アプリの「設定 → 意見とサポート」から、'
                  'またはメール <a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a> '
                  'までお送りください。'),
@@ -61,7 +61,7 @@ UI = {
         "tagline": "혼자 만드는 작은 도구들.",
         "apps": "앱",
         "soon": "출시 예정",
-        "more": "자세히",
+        "privacy": "개인정보 처리방침",
         "foot": ('문의나 제안은 각 앱의 "설정 → 의견 및 지원"에서, '
                  '또는 <a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a> '
                  '으로 보내 주세요.'),
@@ -71,11 +71,15 @@ UI = {
 # play：None 表示還沒公開（顯示「即將推出」而不是連結）。
 # ios ：None 表示還沒上架，拿到 App Store ID 之後換成網址。
 #       Play 只在封閉測試時也放 None——測試頁一般人打不開。
+# privacy：(中文版, 英文版)。各 App 的檔名不一致（鬧鐘的 privacy.html 是中文、
+#       PlushCam 的是英文），所以逐一寫明，不要用規則拼。
+#       以前這格是「說明」連到各 App 的根目錄，但只有鬧鐘那頁是真的介紹，
+#       其他都只有隱私權與信箱，所以統一改成隱私權政策（2026-11-20）。
 APPS = [
     {
         "play": "com.botano.alarm",
         "ios": None,
-        "more": "/botanoalarm/",
+        "privacy": ("/botanoalarm/privacy.html", "/botanoalarm/privacy-en.html"),
         "name": {
             "zh": ("班表鬧鐘", "Botano Shift Work Alarm"),
             "en": ("Botano Shift Work Alarm", ""),
@@ -95,7 +99,7 @@ APPS = [
     {
         "play": "com.botano.plantrecord",
         "ios": None,
-        "more": "/plantrecord/",
+        "privacy": ("/plantrecord/privacy-zh.html", "/plantrecord/privacy-en.html"),
         "name": {
             "zh": ("植物成長紀錄", "Plant Growth Journal"),
             "en": ("Plant Growth Journal", ""),
@@ -112,7 +116,7 @@ APPS = [
     {
         "play": "com.botano.tripcart",
         "ios": None,
-        "more": "/tripcart/",
+        "privacy": ("/tripcart/privacy-zh.html", "/tripcart/privacy-en.html"),
         "name": {
             "zh": ("出國購物計算機", "TripCart"),
             "en": ("TripCart", ""),
@@ -132,7 +136,7 @@ APPS = [
     {
         "play": None,
         "ios": "https://apps.apple.com/app/id6835796281",
-        "more": "/plushcam/",
+        "privacy": ("/plushcam/privacy-zh.html", "/plushcam/privacy.html"),
         "name": {
             "zh": ("玩偶拍照", "PlushCam"),
             "en": ("PlushCam", ""),
@@ -152,7 +156,7 @@ APPS = [
     {
         "play": "com.botano.exercisehabit",
         "ios": None,
-        "more": "/exercisehabit/",
+        "privacy": ("/exercisehabit/privacy-zh.html", "/exercisehabit/privacy-en.html"),
         "name": {
             "zh": ("運動習慣養成", "Exercise Habit"),
             "en": ("Exercise Habit", ""),
@@ -264,8 +268,10 @@ def card(app, lang, ui):
         chips.append(u'<a href="%s">App Store</a>' % app["ios"])
     else:
         chips.append(u"<span>App Store &middot; %s</span>" % ui["soon"])
-    if app["more"]:
-        chips.append(u'<a class="more" href="%s">%s</a>' % (app["more"], ui["more"]))
+    # 隱私權政策只有中、英兩版：中文頁連中文，其他語言連英文
+    zh_url, en_url = app["privacy"]
+    chips.append(u'<a class="more" href="%s">%s</a>'
+                 % (zh_url if lang == "zh" else en_url, ui["privacy"]))
 
     return (u'  <div class="app">\n'
             u'    <b>%s</b>\n'
