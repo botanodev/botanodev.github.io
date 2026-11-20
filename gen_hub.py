@@ -150,7 +150,7 @@ APPS = [
         },
     },
     {
-        "play": None,
+        "play": "com.botano.exercisehabit",
         "ios": None,
         "more": "/exercisehabit/",
         "name": {
