@@ -51,7 +51,13 @@
   }
   .app b { display: block; font-size: 1.1rem; }
   .app .en { color: var(--muted); font-weight: 400; font-size: .95rem; }
-  .app > p { margin: 4px 0 14px; color: var(--muted); font-size: .95rem; }
+  .app > p { margin: 4px 0 10px; color: var(--muted); font-size: .95rem; }
+  .app .points {
+    margin: 0 0 14px; padding-left: 1.2em;
+    color: var(--ink); font-size: .9rem; line-height: 1.6;
+  }
+  .app .points li { margin-bottom: 4px; }
+  .app .points li::marker { color: var(--green); }
 
   .stores { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
   .stores a, .stores span {
@@ -96,6 +102,11 @@
   <div class="app">
     <b>班表鬧鐘 <span class="en">Botano Shift Work Alarm</span></b>
     <p>排班族的行事曆鬧鐘。在行事曆上標好班別，鬧鐘自己跟著班表響。</p>
+    <ul class="points">
+      <li>早班、中班、晚班、休假四種班別，每顆鬧鐘只在自己的班別響</li>
+      <li>一個班別設了好幾顆鬧鐘時，「跳過整天」一次跳掉當天剩下的</li>
+      <li>台灣的國定假日與補班日自動標好，其他地區也會顯示節日名稱</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.alarm">Google Play</a>
       <span>App Store &middot; 即將推出</span>
@@ -106,9 +117,14 @@
   <div class="app">
     <b>植物成長紀錄 <span class="en">Plant Growth Journal</span></b>
     <p>幫植物拍照記錄成長，匯出成一張可以分享的直式長圖。</p>
+    <ul class="points">
+      <li>每張照片自動記下日期，同一株植物的變化排在一起看</li>
+      <li>一鍵做成長圖或組圖，預覽免費，做好可以直接分享</li>
+      <li>不用註冊，照片只存在你的手機裡</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.plantrecord">Google Play</a>
-      <span>App Store &middot; 即將推出</span>
+      <a href="https://apps.apple.com/app/id6836677754">App Store</a>
       <a class="more" href="/plantrecord/privacy-zh.html">隱私權政策</a>
     </div>
   </div>
@@ -116,6 +132,11 @@
   <div class="app">
     <b>出國購物計算機 <span class="en">TripCart</span></b>
     <p>在店裡就算清楚這家店要付多少本國貨幣，結帳後自動成為旅程帳本的一筆。</p>
+    <ul class="points">
+      <li>算進信用卡的海外手續費與回饋，在店裡就知道實際大約要付多少</li>
+      <li>旅程帳本依日期分組，有預算與圖表，可以匯出 CSV 與 PDF</li>
+      <li>日本退稅：每件商品標記 10% 或 8%，出境前列出要領的退稅</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.tripcart">Google Play</a>
       <span>App Store &middot; 即將推出</span>
@@ -125,7 +146,12 @@
 
   <div class="app">
     <b>玩偶拍照 <span class="en">PlushCam</span></b>
-    <p>把玩偶拍一次、去背存起來，之後就能放進任何照片裡。玩偶不用帶出門，也能一起合照。</p>
+    <p>太寶貝的娃娃捨不得帶出門？怕弄髒、怕弄丟，就算裝進透明娃包也還是擔心。在家把它拍一次，娃娃安心留在家，照片裡一樣有它。</p>
+    <ul class="points">
+      <li>在素色背景前拍一次，App 自動去背；想要更多角度可以補拍側面與背面</li>
+      <li>現場拍有「手持」與「完整入鏡」兩種構圖，完整入鏡會加上淡淡的影子</li>
+      <li>以前拍好的風景照，也能事後把玩偶放進去</li>
+    </ul>
     <div class="stores">
       <span>Google Play &middot; 即將推出</span>
       <a href="https://apps.apple.com/app/id6835796281">App Store</a>
@@ -136,6 +162,11 @@
   <div class="app">
     <b>運動習慣養成 <span class="en">Exercise Habit</span></b>
     <p>給討厭運動、容易忘記的人。每天的最低限度不到一分鐘，生病那天也做得到。</p>
+    <ul class="points">
+      <li>回答 4 個問題，30 秒挑出適合你的範本，從最容易的階段開始</li>
+      <li>每天兩個選項：慢慢變難的今日目標，和不到一分鐘的維持運動</li>
+      <li>持續 14 天、完成目標 10 次就建議升一階；做不動時也可以退回</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.exercisehabit">Google Play</a>
       <span>App Store &middot; 即將推出</span>

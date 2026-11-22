@@ -95,10 +95,25 @@ APPS = [
             "ko": "교대 근무자를 위한 캘린더 연동 알람. 근무표만 표시해 두면 "
                   "알람이 알아서 따라갑니다.",
         },
+        "points": {
+            "zh": ["早班、中班、晚班、休假四種班別，每顆鬧鐘只在自己的班別響",
+                   "一個班別設了好幾顆鬧鐘時，「跳過整天」一次跳掉當天剩下的",
+                   "台灣的國定假日與補班日自動標好，其他地區也會顯示節日名稱"],
+            "en": ["Morning, afternoon, night or off: each alarm rings only on its own shift",
+                   "“Skip whole day” silences the rest of a day’s alarms in one tap",
+                   "Taiwan’s public holidays and make-up workdays are marked for you; "
+                   "other regions show holiday names"],
+            "ja": ["早番・中番・夜勤・休みの4種類。アラームは自分のシフトの日だけ鳴ります",
+                   "「一日スキップ」で、その日の残りのアラームをまとめて止められます",
+                   "台湾の祝日と振替出勤日は自動で反映。ほかの地域でも祝日名を表示します"],
+            "ko": ["오전·오후·야간·휴무 네 가지 근무. 알람은 해당 근무일에만 울립니다",
+                   "‘하루 건너뛰기’로 그날 남은 알람을 한 번에 끌 수 있습니다",
+                   "대만의 공휴일과 대체 근무일은 자동으로 표시되고, 다른 지역도 공휴일 이름을 보여 줍니다"],
+        },
     },
     {
         "play": "com.botano.plantrecord",
-        "ios": None,
+        "ios": "https://apps.apple.com/app/id6836677754",
         "privacy": ("/plantrecord/privacy-zh.html", "/plantrecord/privacy-en.html"),
         "name": {
             "zh": ("植物成長紀錄", "Plant Growth Journal"),
@@ -111,6 +126,20 @@ APPS = [
             "en": "Photograph your plants over time and export one tall, shareable image.",
             "ja": "植物の写真を撮りためて、縦長の一枚の画像にまとめて共有できます。",
             "ko": "식물 사진을 기록해 공유할 수 있는 세로로 긴 이미지로 내보냅니다.",
+        },
+        "points": {
+            "zh": ["每張照片自動記下日期，同一株植物的變化排在一起看",
+                   "一鍵做成長圖或組圖，預覽免費，做好可以直接分享",
+                   "不用註冊，照片只存在你的手機裡"],
+            "en": ["Every photo is dated, so one plant’s changes line up side by side",
+                   "Turn them into a tall image or a grid in one tap; previews are free",
+                   "No sign-up, and your photos stay on your phone"],
+            "ja": ["写真には日付が自動で付き、同じ株の変化を並べて見られます",
+                   "縦長の画像やグリッドをワンタップで作成。プレビューは無料です",
+                   "登録不要。写真はスマホの中だけに保存されます"],
+            "ko": ["사진마다 날짜가 자동으로 기록되어 한 식물의 변화를 나란히 볼 수 있습니다",
+                   "세로로 긴 이미지나 그리드를 한 번에 만들 수 있고, 미리보기는 무료입니다",
+                   "가입이 필요 없고, 사진은 휴대폰에만 저장됩니다"],
         },
     },
     {
@@ -132,6 +161,21 @@ APPS = [
             "ko": "매장에서 자국 통화로 얼마인지 바로 계산하고, 결제 후에는 "
                   "여행 가계부에 그대로 남습니다.",
         },
+        "points": {
+            "zh": ["算進信用卡的海外手續費與回饋，在店裡就知道實際大約要付多少",
+                   "旅程帳本依日期分組，有預算與圖表，可以匯出 CSV 與 PDF",
+                   "日本退稅：每件商品標記 10% 或 8%，出境前列出要領的退稅"],
+            "en": ["Counts your card’s foreign transaction fee and rewards, "
+                   "so you see the real cost while still in the shop",
+                   "A trip ledger by day, with a budget, charts and CSV/PDF export",
+                   "Japan tax refund: mark items 10% or 8% and get a checklist before you fly home"],
+            "ja": ["カードの海外事務手数料とポイント還元まで含めて、実際の支払額の目安をその場で表示",
+                   "日付ごとの旅の家計簿。予算とグラフ、CSV・PDF 書き出しに対応",
+                   "日本の免税：商品ごとに 10%・8% を記録し、出国前に受け取る免税をまとめて確認"],
+            "ko": ["카드 해외 결제 수수료와 적립까지 반영해, 매장에서 실제 결제 금액을 바로 확인",
+                   "날짜별 여행 가계부에 예산과 차트, CSV·PDF 내보내기까지",
+                   "일본 택스리펀드: 상품마다 10%·8%를 표시하고, 출국 전에 받을 환급을 한눈에"],
+        },
     },
     {
         "play": None,
@@ -144,13 +188,34 @@ APPS = [
             "ko": ("인형 사진", "PlushCam"),
         },
         "line": {
-            "zh": "把玩偶拍一次、去背存起來，之後就能放進任何照片裡。玩偶不用帶出門，也能一起合照。",
-            "en": "Photograph your plushie once, and it can join any photo you take, "
-                  "even on days it stays home.",
-            "ja": "ぬいを一度撮って切り抜いておけば、どんな写真にも一緒に写れます。"
-                  "連れて行けない日も、ぬい撮り。",
-            "ko": "인형을 한 번 찍어 배경을 지워 두면 어떤 사진에도 함께 담을 수 있습니다. "
-                  "데려가지 못한 날에도 함께 찍어요.",
+            # 2026-11-22 開發者補的概念：台灣很多人把娃娃當寶貝，會裝進透明娃包掛著出門。
+            # 重點是「捨不得弄髒、弄丟，但又想一起拍照」，不是「懶得帶」。
+            "zh": "太寶貝的娃娃捨不得帶出門？怕弄髒、怕弄丟，就算裝進透明娃包也還是擔心。"
+                  "在家把它拍一次，娃娃安心留在家，照片裡一樣有它。",
+            "en": "Too precious to take outside? Afraid it gets dirty or lost, even in a clear "
+                  "pouch? Photograph your plushie once at home; it stays safe there, "
+                  "and still joins every photo you take.",
+            "ja": "大切なぬいを汚したくない、なくしたくない。透明なぬいポーチに入れても心配。"
+                  "でも一緒に写真は撮りたい。家で一度撮っておけば、ぬいはお留守番のまま、"
+                  "どの写真にも一緒に写れます。",
+            "ko": "소중한 인형이 더러워지거나 잃어버릴까 봐, 투명 인형 파우치에 넣어도 걱정되나요? "
+                  "집에서 한 번 찍어 두면 인형은 집에서 안전하게, "
+                  "사진 속에는 언제나 함께할 수 있어요.",
+        },
+        "points": {
+            "zh": ["在素色背景前拍一次，App 自動去背；想要更多角度可以補拍側面與背面",
+                   "現場拍有「手持」與「完整入鏡」兩種構圖，完整入鏡會加上淡淡的影子",
+                   "以前拍好的風景照，也能事後把玩偶放進去"],
+            "en": ["Shoot it once on a plain background and the app cuts it out; "
+                   "add side and back views if you like",
+                   "Two framings on location: hand-held, or standing in the scene with a soft shadow",
+                   "Add your plushie to photos you took earlier, too"],
+            "ja": ["無地の背景で一度撮れば自動で切り抜き。横や後ろの角度も追加できます",
+                   "撮影時は「手持ち」と「全身」の2つの構図。全身にはやわらかな影が付きます",
+                   "前に撮った風景写真にも、あとからぬいを入れられます"],
+            "ko": ["단색 배경에서 한 번 찍으면 자동으로 배경을 지웁니다. 옆모습과 뒷모습도 추가할 수 있어요",
+                   "현장 촬영은 ‘손에 든 구도’와 ‘전신 구도’ 두 가지. 전신에는 은은한 그림자가 생깁니다",
+                   "예전에 찍은 풍경 사진에도 나중에 인형을 넣을 수 있습니다"],
         },
     },
     {
@@ -169,6 +234,20 @@ APPS = [
                   "The daily minimum takes under a minute.",
             "ja": "運動が嫌いで忘れがちな人のために。毎日の最低ラインは一分もかかりません。",
             "ko": "운동을 싫어하고 자주 잊는 사람을 위해. 하루 최소량은 1분도 걸리지 않습니다.",
+        },
+        "points": {
+            "zh": ["回答 4 個問題，30 秒挑出適合你的範本，從最容易的階段開始",
+                   "每天兩個選項：慢慢變難的今日目標，和不到一分鐘的維持運動",
+                   "持續 14 天、完成目標 10 次就建議升一階；做不動時也可以退回"],
+            "en": ["Answer 4 questions and get a habit that fits you, starting at the easiest level",
+                   "Two options every day: a goal that slowly grows, and a minimum that takes under a minute",
+                   "After 14 days and 10 goals the app suggests the next level, and you can always step back"],
+            "ja": ["4つの質問に答えるだけで、自分に合った習慣をいちばんやさしい段階から",
+                   "毎日2つの選択肢：少しずつ上がる今日の目標と、1分かからない最低ライン",
+                   "14日続けて目標を10回達成すると次の段階を提案。きついときは戻ることもできます"],
+            "ko": ["4가지 질문에 답하면 나에게 맞는 습관을 가장 쉬운 단계부터 시작합니다",
+                   "매일 두 가지 선택: 조금씩 어려워지는 오늘의 목표와 1분도 안 걸리는 최소량",
+                   "14일 동안 목표를 10번 달성하면 다음 단계를 제안하고, 힘들 때는 한 단계 내려갈 수도 있습니다"],
         },
     },
 ]
@@ -213,7 +292,13 @@ CSS = """  :root {
   }
   .app b { display: block; font-size: 1.1rem; }
   .app .en { color: var(--muted); font-weight: 400; font-size: .95rem; }
-  .app > p { margin: 4px 0 14px; color: var(--muted); font-size: .95rem; }
+  .app > p { margin: 4px 0 10px; color: var(--muted); font-size: .95rem; }
+  .app .points {
+    margin: 0 0 14px; padding-left: 1.2em;
+    color: var(--ink); font-size: .9rem; line-height: 1.6;
+  }
+  .app .points li { margin-bottom: 4px; }
+  .app .points li::marker { color: var(--green); }
 
   .stores { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
   .stores a, .stores span {
@@ -273,11 +358,15 @@ def card(app, lang, ui):
     chips.append(u'<a class="more" href="%s">%s</a>'
                  % (zh_url if lang == "zh" else en_url, ui["privacy"]))
 
+    # 特色：一行標語之外再三點，讓沒裝過的人知道它具體能做什麼（2026-11-22 加）
+    points = u"\n".join(u"      <li>%s</li>" % p for p in app["points"][lang])
+
     return (u'  <div class="app">\n'
             u'    <b>%s</b>\n'
             u'    <p>%s</p>\n'
+            u'    <ul class="points">\n%s\n    </ul>\n'
             u'    <div class="stores">\n      %s\n    </div>\n'
-            u'  </div>\n') % (title, app["line"][lang], u"\n      ".join(chips))
+            u'  </div>\n') % (title, app["line"][lang], points, u"\n      ".join(chips))
 
 
 def page(lang):

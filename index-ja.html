@@ -51,7 +51,13 @@
   }
   .app b { display: block; font-size: 1.1rem; }
   .app .en { color: var(--muted); font-weight: 400; font-size: .95rem; }
-  .app > p { margin: 4px 0 14px; color: var(--muted); font-size: .95rem; }
+  .app > p { margin: 4px 0 10px; color: var(--muted); font-size: .95rem; }
+  .app .points {
+    margin: 0 0 14px; padding-left: 1.2em;
+    color: var(--ink); font-size: .9rem; line-height: 1.6;
+  }
+  .app .points li { margin-bottom: 4px; }
+  .app .points li::marker { color: var(--green); }
 
   .stores { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
   .stores a, .stores span {
@@ -96,6 +102,11 @@
   <div class="app">
     <b>シフト勤務アラーム <span class="en">Botano Shift Work Alarm</span></b>
     <p>シフト勤務のためのカレンダー連動アラーム。シフトを登録すれば、あとはアラームが合わせてくれます。</p>
+    <ul class="points">
+      <li>早番・中番・夜勤・休みの4種類。アラームは自分のシフトの日だけ鳴ります</li>
+      <li>「一日スキップ」で、その日の残りのアラームをまとめて止められます</li>
+      <li>台湾の祝日と振替出勤日は自動で反映。ほかの地域でも祝日名を表示します</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.alarm">Google Play</a>
       <span>App Store &middot; 近日公開</span>
@@ -106,9 +117,14 @@
   <div class="app">
     <b>植物の成長記録 <span class="en">Plant Growth Journal</span></b>
     <p>植物の写真を撮りためて、縦長の一枚の画像にまとめて共有できます。</p>
+    <ul class="points">
+      <li>写真には日付が自動で付き、同じ株の変化を並べて見られます</li>
+      <li>縦長の画像やグリッドをワンタップで作成。プレビューは無料です</li>
+      <li>登録不要。写真はスマホの中だけに保存されます</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.plantrecord">Google Play</a>
-      <span>App Store &middot; 近日公開</span>
+      <a href="https://apps.apple.com/app/id6836677754">App Store</a>
       <a class="more" href="/plantrecord/privacy-en.html">プライバシーポリシー</a>
     </div>
   </div>
@@ -116,6 +132,11 @@
   <div class="app">
     <b>海外ショッピング計算機 <span class="en">TripCart</span></b>
     <p>お店でその場で自国通貨の支払額を計算し、会計後はそのまま旅の家計簿に残ります。</p>
+    <ul class="points">
+      <li>カードの海外事務手数料とポイント還元まで含めて、実際の支払額の目安をその場で表示</li>
+      <li>日付ごとの旅の家計簿。予算とグラフ、CSV・PDF 書き出しに対応</li>
+      <li>日本の免税：商品ごとに 10%・8% を記録し、出国前に受け取る免税をまとめて確認</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.tripcart">Google Play</a>
       <span>App Store &middot; 近日公開</span>
@@ -125,7 +146,12 @@
 
   <div class="app">
     <b>ぬい撮りカメラ <span class="en">PlushCam</span></b>
-    <p>ぬいを一度撮って切り抜いておけば、どんな写真にも一緒に写れます。連れて行けない日も、ぬい撮り。</p>
+    <p>大切なぬいを汚したくない、なくしたくない。透明なぬいポーチに入れても心配。でも一緒に写真は撮りたい。家で一度撮っておけば、ぬいはお留守番のまま、どの写真にも一緒に写れます。</p>
+    <ul class="points">
+      <li>無地の背景で一度撮れば自動で切り抜き。横や後ろの角度も追加できます</li>
+      <li>撮影時は「手持ち」と「全身」の2つの構図。全身にはやわらかな影が付きます</li>
+      <li>前に撮った風景写真にも、あとからぬいを入れられます</li>
+    </ul>
     <div class="stores">
       <span>Google Play &middot; 近日公開</span>
       <a href="https://apps.apple.com/app/id6835796281">App Store</a>
@@ -136,6 +162,11 @@
   <div class="app">
     <b>運動習慣づくり <span class="en">Exercise Habit</span></b>
     <p>運動が嫌いで忘れがちな人のために。毎日の最低ラインは一分もかかりません。</p>
+    <ul class="points">
+      <li>4つの質問に答えるだけで、自分に合った習慣をいちばんやさしい段階から</li>
+      <li>毎日2つの選択肢：少しずつ上がる今日の目標と、1分かからない最低ライン</li>
+      <li>14日続けて目標を10回達成すると次の段階を提案。きついときは戻ることもできます</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.exercisehabit">Google Play</a>
       <span>App Store &middot; 近日公開</span>

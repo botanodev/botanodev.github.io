@@ -51,7 +51,13 @@
   }
   .app b { display: block; font-size: 1.1rem; }
   .app .en { color: var(--muted); font-weight: 400; font-size: .95rem; }
-  .app > p { margin: 4px 0 14px; color: var(--muted); font-size: .95rem; }
+  .app > p { margin: 4px 0 10px; color: var(--muted); font-size: .95rem; }
+  .app .points {
+    margin: 0 0 14px; padding-left: 1.2em;
+    color: var(--ink); font-size: .9rem; line-height: 1.6;
+  }
+  .app .points li { margin-bottom: 4px; }
+  .app .points li::marker { color: var(--green); }
 
   .stores { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
   .stores a, .stores span {
@@ -96,6 +102,11 @@
   <div class="app">
     <b>Botano Shift Work Alarm</b>
     <p>A calendar-driven alarm for shift workers. Mark your shifts once; the alarms follow.</p>
+    <ul class="points">
+      <li>Morning, afternoon, night or off: each alarm rings only on its own shift</li>
+      <li>“Skip whole day” silences the rest of a day’s alarms in one tap</li>
+      <li>Taiwan’s public holidays and make-up workdays are marked for you; other regions show holiday names</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.alarm">Google Play</a>
       <span>App Store &middot; Coming soon</span>
@@ -106,9 +117,14 @@
   <div class="app">
     <b>Plant Growth Journal</b>
     <p>Photograph your plants over time and export one tall, shareable image.</p>
+    <ul class="points">
+      <li>Every photo is dated, so one plant’s changes line up side by side</li>
+      <li>Turn them into a tall image or a grid in one tap; previews are free</li>
+      <li>No sign-up, and your photos stay on your phone</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.plantrecord">Google Play</a>
-      <span>App Store &middot; Coming soon</span>
+      <a href="https://apps.apple.com/app/id6836677754">App Store</a>
       <a class="more" href="/plantrecord/privacy-en.html">Privacy policy</a>
     </div>
   </div>
@@ -116,6 +132,11 @@
   <div class="app">
     <b>TripCart</b>
     <p>Work out what a shop really costs in your own currency, then keep it as a trip expense.</p>
+    <ul class="points">
+      <li>Counts your card’s foreign transaction fee and rewards, so you see the real cost while still in the shop</li>
+      <li>A trip ledger by day, with a budget, charts and CSV/PDF export</li>
+      <li>Japan tax refund: mark items 10% or 8% and get a checklist before you fly home</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.tripcart">Google Play</a>
       <span>App Store &middot; Coming soon</span>
@@ -125,7 +146,12 @@
 
   <div class="app">
     <b>PlushCam</b>
-    <p>Photograph your plushie once, and it can join any photo you take, even on days it stays home.</p>
+    <p>Too precious to take outside? Afraid it gets dirty or lost, even in a clear pouch? Photograph your plushie once at home; it stays safe there, and still joins every photo you take.</p>
+    <ul class="points">
+      <li>Shoot it once on a plain background and the app cuts it out; add side and back views if you like</li>
+      <li>Two framings on location: hand-held, or standing in the scene with a soft shadow</li>
+      <li>Add your plushie to photos you took earlier, too</li>
+    </ul>
     <div class="stores">
       <span>Google Play &middot; Coming soon</span>
       <a href="https://apps.apple.com/app/id6835796281">App Store</a>
@@ -136,6 +162,11 @@
   <div class="app">
     <b>Exercise Habit</b>
     <p>For people who dislike exercise and forget to start. The daily minimum takes under a minute.</p>
+    <ul class="points">
+      <li>Answer 4 questions and get a habit that fits you, starting at the easiest level</li>
+      <li>Two options every day: a goal that slowly grows, and a minimum that takes under a minute</li>
+      <li>After 14 days and 10 goals the app suggests the next level, and you can always step back</li>
+    </ul>
     <div class="stores">
       <a href="https://play.google.com/store/apps/details?id=com.botano.exercisehabit">Google Play</a>
       <span>App Store &middot; Coming soon</span>
