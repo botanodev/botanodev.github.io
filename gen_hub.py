@@ -220,7 +220,7 @@ APPS = [
     },
     {
         "play": "com.botano.exercisehabit",
-        "ios": None,
+        "ios": "https://apps.apple.com/app/id6837182764",
         "privacy": ("/exercisehabit/privacy-zh.html", "/exercisehabit/privacy-en.html"),
         "name": {
             "zh": ("運動習慣養成", "Exercise Habit"),
