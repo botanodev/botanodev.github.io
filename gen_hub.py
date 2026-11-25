@@ -78,7 +78,7 @@ UI = {
 APPS = [
     {
         "play": "com.botano.alarm",
-        "ios": None,
+        "ios": "https://apps.apple.com/app/id6837208588",
         "privacy": ("/botanoalarm/privacy.html", "/botanoalarm/privacy-en.html"),
         "name": {
             "zh": ("班表鬧鐘", "Botano Shift Work Alarm"),
