@@ -32,6 +32,7 @@ UI = {
         "tagline": "一個人做的小工具。",
         "apps": "APP",
         "soon": "即將推出",
+        "details": "詳細介紹",
         "privacy": "隱私權政策",
         "foot": ('有問題或建議，可以在各個 App 裡的「設定 → 意見與支援」寄給我，'
                  '或寄到 <a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a>。'),
@@ -41,6 +42,7 @@ UI = {
         "tagline": "Small tools, made by one person.",
         "apps": "APPS",
         "soon": "Coming soon",
+        "details": "Details",
         "privacy": "Privacy policy",
         "foot": ('Questions or suggestions are welcome through "Settings &rarr; Feedback" '
                  'in any of the apps, or by email to '
@@ -51,6 +53,7 @@ UI = {
         "tagline": "ひとりで作っている小さなツール。",
         "apps": "アプリ",
         "soon": "近日公開",
+        "details": "詳しく見る",
         "privacy": "プライバシーポリシー",
         "foot": ('ご質問・ご要望は各アプリの「設定 → 意見とサポート」から、'
                  'またはメール <a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a> '
@@ -61,6 +64,7 @@ UI = {
         "tagline": "혼자 만드는 작은 도구들.",
         "apps": "앱",
         "soon": "출시 예정",
+        "details": "자세히 보기",
         "privacy": "개인정보 처리방침",
         "foot": ('문의나 제안은 각 앱의 "설정 → 의견 및 지원"에서, '
                  '또는 <a href="mailto:botanodev@gmail.com">botanodev@gmail.com</a> '
@@ -291,6 +295,8 @@ CSS = """  :root {
     padding: 18px; margin-bottom: 14px;
   }
   .app b { display: block; font-size: 1.1rem; }
+  .app b a.name { color: var(--ink); text-decoration: none; }
+  .app b a.name:hover { text-decoration: underline; }
   .app .en { color: var(--muted); font-weight: 400; font-size: .95rem; }
   .app > p { margin: 4px 0 10px; color: var(--muted); font-size: .95rem; }
   .app .points {
@@ -310,6 +316,7 @@ CSS = """  :root {
     text-decoration: none; font-weight: 700; border-color: transparent;
   }
   .stores span { color: var(--muted); }
+  .stores .detail { background: var(--brand); color: #fff; }
   .stores .more {
     background: none; color: var(--green); font-weight: 400;
     border-color: var(--hair); padding: 7px 12px;
@@ -343,8 +350,19 @@ def nav(lang):
 def card(app, lang, ui):
     zh_name, sub = app["name"][lang]
     title = zh_name if not sub else u'%s <span class="en">%s</span>' % (zh_name, sub)
+    # 名稱連到該 App 自己的介紹頁（gen_apps.py 產生，2026-11-25 起每支都有）。
+    # 鬧鐘只有中、英兩版，其他語言連到它的預設頁，那邊會依瀏覽器語言再帶一次。
+    slug = app["privacy"][0].strip("/").split("/")[0]
+    page = {"en": "", "zh": "index-zh.html"}.get(lang, "index-%s.html" % lang)
+    if slug == "botanoalarm" and lang not in ("zh",):
+        page = "?en" if lang == "en" else ""
+    elif lang == "en":
+        page = "?en"
+    title = u'<a class="name" href="/%s/%s">%s</a>' % (slug, page, title)
 
-    chips = []
+    # 「詳細介紹」放第一顆，連到乾淨的網址（/plushcam/ 這種）：
+    # 開發者會從這裡長按複製連結拿去推廣，對方打開時那一頁會依瀏覽器語言自己帶。
+    chips = [u'<a class="detail" href="/%s/">%s</a>' % (slug, ui["details"])]
     if app["play"]:
         chips.append(u'<a href="%s">Google Play</a>' % (PLAY_URL % app["play"]))
     else:

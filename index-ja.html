@@ -50,6 +50,8 @@
     padding: 18px; margin-bottom: 14px;
   }
   .app b { display: block; font-size: 1.1rem; }
+  .app b a.name { color: var(--ink); text-decoration: none; }
+  .app b a.name:hover { text-decoration: underline; }
   .app .en { color: var(--muted); font-weight: 400; font-size: .95rem; }
   .app > p { margin: 4px 0 10px; color: var(--muted); font-size: .95rem; }
   .app .points {
@@ -69,6 +71,7 @@
     text-decoration: none; font-weight: 700; border-color: transparent;
   }
   .stores span { color: var(--muted); }
+  .stores .detail { background: var(--brand); color: #fff; }
   .stores .more {
     background: none; color: var(--green); font-weight: 400;
     border-color: var(--hair); padding: 7px 12px;
@@ -100,7 +103,7 @@
   <h2>アプリ</h2>
 
   <div class="app">
-    <b>シフト勤務アラーム <span class="en">Botano Shift Work Alarm</span></b>
+    <b><a class="name" href="/botanoalarm/">シフト勤務アラーム <span class="en">Botano Shift Work Alarm</span></a></b>
     <p>シフト勤務のためのカレンダー連動アラーム。シフトを登録すれば、あとはアラームが合わせてくれます。</p>
     <ul class="points">
       <li>早番・中番・夜勤・休みの4種類。アラームは自分のシフトの日だけ鳴ります</li>
@@ -108,6 +111,7 @@
       <li>台湾の祝日と振替出勤日は自動で反映。ほかの地域でも祝日名を表示します</li>
     </ul>
     <div class="stores">
+      <a class="detail" href="/botanoalarm/">詳しく見る</a>
       <a href="https://play.google.com/store/apps/details?id=com.botano.alarm">Google Play</a>
       <a href="https://apps.apple.com/app/id6837208588">App Store</a>
       <a class="more" href="/botanoalarm/privacy-en.html">プライバシーポリシー</a>
@@ -115,7 +119,7 @@
   </div>
 
   <div class="app">
-    <b>植物の成長記録 <span class="en">Plant Growth Journal</span></b>
+    <b><a class="name" href="/plantrecord/index-ja.html">植物の成長記録 <span class="en">Plant Growth Journal</span></a></b>
     <p>植物の写真を撮りためて、縦長の一枚の画像にまとめて共有できます。</p>
     <ul class="points">
       <li>写真には日付が自動で付き、同じ株の変化を並べて見られます</li>
@@ -123,6 +127,7 @@
       <li>登録不要。写真はスマホの中だけに保存されます</li>
     </ul>
     <div class="stores">
+      <a class="detail" href="/plantrecord/">詳しく見る</a>
       <a href="https://play.google.com/store/apps/details?id=com.botano.plantrecord">Google Play</a>
       <a href="https://apps.apple.com/app/id6836677754">App Store</a>
       <a class="more" href="/plantrecord/privacy-en.html">プライバシーポリシー</a>
@@ -130,7 +135,7 @@
   </div>
 
   <div class="app">
-    <b>海外ショッピング計算機 <span class="en">TripCart</span></b>
+    <b><a class="name" href="/tripcart/index-ja.html">海外ショッピング計算機 <span class="en">TripCart</span></a></b>
     <p>お店でその場で自国通貨の支払額を計算し、会計後はそのまま旅の家計簿に残ります。</p>
     <ul class="points">
       <li>カードの海外事務手数料とポイント還元まで含めて、実際の支払額の目安をその場で表示</li>
@@ -138,6 +143,7 @@
       <li>日本の免税：商品ごとに 10%・8% を記録し、出国前に受け取る免税をまとめて確認</li>
     </ul>
     <div class="stores">
+      <a class="detail" href="/tripcart/">詳しく見る</a>
       <a href="https://play.google.com/store/apps/details?id=com.botano.tripcart">Google Play</a>
       <span>App Store &middot; 近日公開</span>
       <a class="more" href="/tripcart/privacy-en.html">プライバシーポリシー</a>
@@ -145,7 +151,7 @@
   </div>
 
   <div class="app">
-    <b>ぬい撮りカメラ <span class="en">PlushCam</span></b>
+    <b><a class="name" href="/plushcam/index-ja.html">ぬい撮りカメラ <span class="en">PlushCam</span></a></b>
     <p>大切なぬいを汚したくない、なくしたくない。透明なぬいポーチに入れても心配。でも一緒に写真は撮りたい。家で一度撮っておけば、ぬいはお留守番のまま、どの写真にも一緒に写れます。</p>
     <ul class="points">
       <li>無地の背景で一度撮れば自動で切り抜き。横や後ろの角度も追加できます</li>
@@ -153,6 +159,7 @@
       <li>前に撮った風景写真にも、あとからぬいを入れられます</li>
     </ul>
     <div class="stores">
+      <a class="detail" href="/plushcam/">詳しく見る</a>
       <span>Google Play &middot; 近日公開</span>
       <a href="https://apps.apple.com/app/id6835796281">App Store</a>
       <a class="more" href="/plushcam/privacy.html">プライバシーポリシー</a>
@@ -160,7 +167,7 @@
   </div>
 
   <div class="app">
-    <b>運動習慣づくり <span class="en">Exercise Habit</span></b>
+    <b><a class="name" href="/exercisehabit/index-ja.html">運動習慣づくり <span class="en">Exercise Habit</span></a></b>
     <p>運動が嫌いで忘れがちな人のために。毎日の最低ラインは一分もかかりません。</p>
     <ul class="points">
       <li>4つの質問に答えるだけで、自分に合った習慣をいちばんやさしい段階から</li>
@@ -168,6 +175,7 @@
       <li>14日続けて目標を10回達成すると次の段階を提案。きついときは戻ることもできます</li>
     </ul>
     <div class="stores">
+      <a class="detail" href="/exercisehabit/">詳しく見る</a>
       <a href="https://play.google.com/store/apps/details?id=com.botano.exercisehabit">Google Play</a>
       <a href="https://apps.apple.com/app/id6837182764">App Store</a>
       <a class="more" href="/exercisehabit/privacy-en.html">プライバシーポリシー</a>
