@@ -128,6 +128,70 @@ NEUTRAL = {
 }
 
 
+# ---------------------------------------------------------------- 照片
+
+# 植物紀錄與玩偶拍照賣的就是照片，文字講不清楚，直接放成品（2026-11-25）。
+# 每一張：(輸出檔名, {語言: 來源路徑（相對於該 App 的私有 repo）}, 寬度, {語言: 說明})。
+# 來源沒有的語言用英文那張。放在下載按鈕下面、內文上面。
+PHOTOS = {
+    "plantrecord": [
+        # App 真正做出來的長圖。三個語言只差在角落日期的寫法
+        ("long", {"zh": "tool/store-src/ios/zh/longimage.jpg",
+                  "ja": "tool/store-src/ios/ja/longimage.jpg",
+                  "en": "tool/store-src/ios/en/longimage.jpg"}, 540,
+         {"zh": "App 做出來的長圖：最新的在最上面，往下就是過去。",
+          "en": "A long image made by the app: newest at the top, the past below.",
+          "ja": "アプリで作った縦長画像。いちばん上が最新、下にいくほど過去。",
+          "ko": "앱으로 만든 세로 이미지. 맨 위가 최신, 아래로 갈수록 과거입니다."}),
+    ],
+    "plushcam": [
+        ("photo", {"en": "doc/store/screenshots/en/01-photo.png"}, 720,
+         {"zh": "拍好的照片：玩偶留在家，照片裡一樣有它。",
+          "en": "The finished photo. The plushie stayed home, and it is still in the picture.",
+          "ja": "できあがった写真。ぬいはお留守番、でも写真には一緒に。",
+          "ko": "완성된 사진. 인형은 집에 있지만 사진 속에는 함께 있어요."}),
+        ("camera", {"zh": "doc/store/screenshots/zh/02-handheld.png",
+                    "en": "doc/store/screenshots/en/02-handheld.png"}, 540,
+         {"zh": "拍照的時候，玩偶已經在畫面上。",
+          "en": "While you shoot, your plushie is already in the frame.",
+          "ja": "撮影するとき、ぬいはもう画面の中に。",
+          "ko": "촬영할 때 인형은 이미 화면 안에 있어요."}),
+    ],
+}
+
+
+def _save_photo(src, dst, width):
+    """縮成網頁用的 JPEG。原檔動輒 2～5 MB，手機上開會很慢。"""
+    from PIL import Image  # pip install pillow
+    im = Image.open(src).convert("RGB")
+    if im.width > width:
+        im = im.resize((width, round(im.height * width / im.width)), Image.LANCZOS)
+    im.save(dst, "JPEG", quality=82, optimize=True, progressive=True)
+    return im.size
+
+
+def photos(code_dir, pub_dir, slug):
+    """產生圖檔，回傳 {語言: HTML}。"""
+    out = {lang: [] for lang in OUT}
+    for name, srcs, width, caps in PHOTOS.get(slug, []):
+        made = {}
+        for lang in OUT:
+            key = lang if lang in srcs else "en"
+            if key not in made:
+                fn = "img/%s-%s.jpg" % (name, key) if len(srcs) > 1 else "img/%s.jpg" % name
+                os.makedirs(os.path.join(pub_dir, slug, "img"), exist_ok=True)
+                w, h = _save_photo(os.path.join(code_dir, slug, srcs[key]),
+                                   os.path.join(pub_dir, slug, fn), width)
+                made[key] = (fn, w, h)
+            fn, w, h = made[key]
+            out[lang].append(
+                u'<figure class="%s"><img src="%s" width="%d" height="%d" alt="%s" loading="lazy">'
+                u'<figcaption>%s</figcaption></figure>'
+                % (name, fn, w, h, html.escape(caps[lang]), html.escape(caps[lang])))
+    return {k: u'<div class="photos n%d">\n    %s\n  </div>' % (len(v), u"\n    ".join(v))
+            for k, v in out.items() if v}
+
+
 # ---------------------------------------------------------------- 純文字轉 HTML
 
 _BULLET = re.compile(r"^\s*(?:[・•·]|- )\s*")
@@ -253,6 +317,16 @@ CSS = """  :root {
   .stores b { font-size: 1.05rem; white-space: nowrap; }
 
   .wrap { padding: 0 20px 64px; }
+  .photos { display: grid; gap: 14px; margin: 28px 0 0; align-items: start; }
+  .photos.n2 { grid-template-columns: 1fr 1fr; }
+  .photos figure { margin: 0; }
+  .photos img {
+    display: block; width: 100%; height: auto; border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.14);
+  }
+  .photos figcaption { color: var(--muted); font-size: .86rem; margin-top: 8px; line-height: 1.5; }
+  /* 長圖很長：手機上限制寬度，不然要滑很久才看到內文 */
+  .photos .long { max-width: 220px; margin: 0 auto; }
   .desc { margin-top: 28px; }
   .desc h2 { font-size: 1.08rem; margin: 36px 0 10px; }
   .desc p { margin: 0 0 14px; }
@@ -288,7 +362,7 @@ def _href(code):
     return u"./?en" if code == "en" else OUT[code]
 
 
-def page(app, slug, lang, desc_html):
+def page(app, slug, lang, desc_html, photos_html=u""):
     ui = UI[lang]
     e = html.escape
     name, sub = app["name"][lang]
@@ -367,6 +441,7 @@ def page(app, slug, lang, desc_html):
     %(stores)s
   </div>
 
+  %(photos)s
   <div class="desc">
 %(desc)s
   </div>
@@ -386,6 +461,7 @@ def page(app, slug, lang, desc_html):
         "css": CSS, "hub": hub, "nav": nav, "name": name,
         "sub": u"<small>%s</small>" % sub if sub else u"",
         "line": app["line"][lang], "stores": u"\n    ".join(stores), "desc": desc_html,
+        "photos": photos_html,
         "foot": ui["foot"],
         # 隱私權政策只有中、英兩版
         "priv_main": zh_priv if lang == "zh" else en_priv,
@@ -403,10 +479,11 @@ def main():
         if slug == "botanoalarm":
             continue  # 見檔頭
         descs = descriptions(code_dir, slug)
+        pics = photos(code_dir, pub_dir, slug)
         for lang, filename in OUT.items():
             body = to_html(descs[lang], lang) if lang in descs else u""
             path = os.path.join(pub_dir, slug, filename)
-            io.open(path, "w", encoding="utf-8", newline="\n").write(page(app, slug, lang, body))
+            io.open(path, "w", encoding="utf-8", newline="\n").write(page(app, slug, lang, body, pics.get(lang, u"")))
         print("%-14s 完整說明：%s" % (slug, " ".join(sorted(descs)) or "（無）"))
 
 
