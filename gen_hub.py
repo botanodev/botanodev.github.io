@@ -351,18 +351,20 @@ def card(app, lang, ui):
     zh_name, sub = app["name"][lang]
     title = zh_name if not sub else u'%s <span class="en">%s</span>' % (zh_name, sub)
     # 名稱連到該 App 自己的介紹頁（gen_apps.py 產生，2026-11-25 起每支都有）。
-    # 鬧鐘只有中、英兩版，其他語言連到它的預設頁，那邊會依瀏覽器語言再帶一次。
     slug = app["privacy"][0].strip("/").split("/")[0]
     page = {"en": "", "zh": "index-zh.html"}.get(lang, "index-%s.html" % lang)
-    if slug == "botanoalarm" and lang not in ("zh",):
-        page = "?en" if lang == "en" else ""
+    if slug == "botanoalarm" and lang != "zh":
+        page = "?en"  # 鬧鐘只有中、英兩版，日、韓文總網頁點進去看英文
     elif lang == "en":
         page = "?en"
-    title = u'<a class="name" href="/%s/%s">%s</a>' % (slug, page, title)
+    detail_href = u"/%s/%s" % (slug, page)
+    title = u'<a class="name" href="%s">%s</a>' % (detail_href, title)
 
-    # 「詳細介紹」放第一顆，連到乾淨的網址（/plushcam/ 這種）：
-    # 開發者會從這裡長按複製連結拿去推廣，對方打開時那一頁會依瀏覽器語言自己帶。
-    chips = [u'<a class="detail" href="/%s/">%s</a>' % (slug, ui["details"])]
+    # 「詳細介紹」放第一顆，跟著總網頁目前的語言：中文總網頁點進去是中文、
+    # 英文點進去是英文（2026-11-25 開發者要求，原本連乾淨網址、依瀏覽器語言帶，
+    # 會出現在中文總網頁點進去卻看到英文的情況）。
+    # 推廣要貼的乾淨網址是 https://botanodev.github.io/<app>/，那一頁仍會依瀏覽器語言帶。
+    chips = [u'<a class="detail" href="%s">%s</a>' % (detail_href, ui["details"])]
     if app["play"]:
         chips.append(u'<a href="%s">Google Play</a>' % (PLAY_URL % app["play"]))
     else:
