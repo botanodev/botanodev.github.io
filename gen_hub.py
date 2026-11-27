@@ -182,7 +182,7 @@ APPS = [
         },
     },
     {
-        "play": None,
+        "play": "com.botano.plushcam",
         "ios": "https://apps.apple.com/app/id6835796281",
         "privacy": ("/plushcam/privacy-zh.html", "/plushcam/privacy.html"),
         "name": {
